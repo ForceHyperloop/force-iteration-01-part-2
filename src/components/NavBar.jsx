@@ -1,5 +1,26 @@
+const navData = [
+  { id: 1, name: "Home", target: "#home" },
+  { id: 2, name: "About Us", target: "#about" },
+  { id: 3, name: "Recent Works", target: "#recent" },
+  { id: 4, name: "Contact Us", target: "#contact" },
+];
+
 const NavBar = () => {
-  return <div>This is the NavBar</div>;
+  return (
+    <div className="w-fit mx-auto mt-5 ">
+      <nav className="py-[1.5vh] px-[1vw] flex justify-center gap-[1.3vw] border border-white rounded-xl">
+        {navData.map((data) => (
+          <a
+            href={data.target}
+            key={data.id}
+            className="text-white font-semibold hover:text-blue-500 transition "
+          >
+            {data.name}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
 };
 
 export default NavBar;
