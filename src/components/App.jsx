@@ -19,10 +19,18 @@ function App() {
       </div>
 
       <div className="w-screen min-h-screen bg-neutral-900 pt-[calc(4rem+1vh)]">
-        <Hero />
-        <About />
-        <RecentWorks />
-        <Contact />
+        <div id="home" className="scroll-mt-20">
+          <Hero />
+        </div>
+        <div id="about" className="scroll-mt-20">
+          <About />
+        </div>
+        <div id="recent" className="scroll-mt-20">
+          <RecentWorks />
+        </div>
+        <div id="contact" className="scroll-mt-20">
+          <Contact />
+        </div>
       </div>
     </div>
   );
