@@ -23,7 +23,10 @@ const RecentWorks = () => {
       </h1>
       <div className="flex flex-wrap justify-center gap-4">
         {recentData.map((data) => (
-          <div className="border border-white rounded-xl w-full mx-[1vw] sm:w-1/2 md:w-1/3 lg:w-1/4 overflow-hidden pb-[2vh] flex flex-col ">
+          <div
+            className="border border-white rounded-xl w-full mx-[1vw] sm:w-1/2 md:w-1/3 lg:w-1/4 overflow-hidden pb-[2vh] flex flex-col"
+            key={data.id}
+          >
             <img
               src={data.img}
               className="w-full h-auto aspect-video object-cover"
