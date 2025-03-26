@@ -2,7 +2,6 @@ const navData = [
   { id: 1, name: "Home", target: "#home" },
   { id: 2, name: "About Us", target: "#about" },
   { id: 3, name: "Recent Works", target: "#recent" },
-  { id: 4, name: "Contact Us", target: "#contact" },
 ];
 
 const NavBar = () => {

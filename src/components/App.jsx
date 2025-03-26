@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import About from "./About";
 import RecentWorks from "./RecentWorks";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -13,12 +14,12 @@ function App() {
         <NavBar />
       </div>
 
-      <div className="fixed inset-0">
+      <div className="fixed inset-0 ">
         <StarsBackground />
         <ShootingStars />
       </div>
 
-      <div className="w-screen min-h-screen bg-neutral-900 pt-[calc(4rem+1vh)]">
+      <div className="min-w-screen min-h-screen bg-neutral-900 pt-[calc(4rem+1vh)]">
         <div id="home" className="scroll-mt-20">
           <Hero />
         </div>
@@ -28,8 +29,8 @@ function App() {
         <div id="recent" className="scroll-mt-20">
           <RecentWorks />
         </div>
-        <div id="contact" className="scroll-mt-20">
-          <Contact />
+        <div id="contact" className="scroll-mt-20 flex flex-col">
+          <Footer />
         </div>
       </div>
     </div>
