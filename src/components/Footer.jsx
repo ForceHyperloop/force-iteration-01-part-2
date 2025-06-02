@@ -33,7 +33,7 @@ const Footer = () => {
           </a>
         ))}
       </div>
-      <div className="inline-block text-purple-600 mx-[1.5vw] text-md sm:text-md md:text-xl ">
+      <div className="inline-block text-purple-600 mx-[1.5vw] text-md sm:text-md md:text-xl font-serif">
         2025 Force Hyperloop
       </div>
     </footer>

@@ -70,8 +70,8 @@ const RecentWorks = () => {
                   src={data.img}
                   className="w-full h-auto aspect-video object-cover"
                 />
-                <div className="px-[1vw]">
-                  <h1 className="text-white text-xl">{data.name}</h1>
+                <div className="px-[1vw] justify-center text-center">
+                  <h1 className="text-white text-xl font-mono">{data.name}</h1>
                 </div>
               </motion.div>
             </>
@@ -90,10 +90,12 @@ const RecentWorks = () => {
                 className="z-20 h-1/2 w-1/2 bg-black/90 text-white p-6 rounded-lg shadow-xl flex flex-col flex-wrap justify-center text-center "
                 key={data.id}
               >
-                <h1 className="text-2xl">Description</h1>
-                <p className="">{data.content}</p>
-                <h2 className="text-xl ">Awards</h2>
-                <p className="">{data.awards}</p>
+                <h1 className="text-2xl font-mono p-1 underline">
+                  Description
+                </h1>
+                <p className="font-serif font-light text-md">{data.content}</p>
+                <h2 className="text-xl font-mono p-1 underline">Awards</h2>
+                <p className="font-serif font-light text-md">{data.awards}</p>
               </motion.div>
             ) : null
           )}

@@ -12,7 +12,7 @@ const NavBar = () => {
           <a
             href={data.target}
             key={data.id}
-            className="text-white font-semibold hover:text-blue-500 transition "
+            className="text-white font-semibold hover:text-blue-500 transition italic font-mono hover:text-lg duration-500 hover:underline"
           >
             {data.name}
           </a>
