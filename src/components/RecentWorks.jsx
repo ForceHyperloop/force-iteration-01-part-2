@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import recent1 from "../assets/recent1.jpg";
+import recent2 from "../assets/recent2.jpg";
 
 const recentData = [
   {
     id: 1,
     name: "The Hyperloop Effect - Parivahan: The Global Hyperloop Conference",
-    img: "/src/assets/recent1.jpg",
+    img: recent1,
     content:
       "Force Hyperloop proudly represented NIT Trichy at The Global Hyperloop Conference (IIT Madras) on April 20, 2024. The team analyzed Hyperloop's feasibility in India, addressing challenges like tunnel buckling—proposing geopolymer composites—and optimizing vacuum maintenance with solar-powered pumps. A Chennai-Bangalore track and an economic viability study were also presented. The competition included a poster round, followed by a final jury presentation.",
     awards:
@@ -14,7 +16,7 @@ const recentData = [
   {
     id: 2,
     name: "GHC (Global Hyperloop Competition)",
-    img: "/src/assets/recent2.jpg",
+    img: recent2,
     content:
       " From 21 February to 24 February 2025, Force Hyperloop proudly represented NIT Trichy at the Global Hyperloop Competition held at IIT Madras. The four-day event brought together the brightest student teams and industry experts from across the country, creating a vibrant platform for innovation in high-speed transportation. Our participation allowed us to showcase our technical expertise, creative design solutions, and strategic problem-solving skills while learning from some of the most influential minds in the hyperloop domain.",
     awards:
