@@ -31,7 +31,7 @@ const Contact = () => {
     setStatus({ submitted: false, submitting: true, error: null });
 
     try {
-      const response = await fetch("http://localhost:3000/api/contact", {
+      const response = await fetch("https://forcehyperloop-server.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

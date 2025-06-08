@@ -21,18 +21,23 @@ const LoadingScreen = () => (
     </div>
   </div>
 );
+let hasLoaded = false;
 
 const AppLayout = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!hasLoaded);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500);
-    return () => clearTimeout(timer);
+    if (!hasLoaded) {
+      const timer = setTimeout(() => {
+        hasLoaded = true;
+        setLoading(false);
+      }, 1500);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
-  if (loading) {
-    return <LoadingScreen />;
-  }
+  if (loading) return <LoadingScreen />;
 
   return (
     <Router>
@@ -50,5 +55,4 @@ const AppLayout = () => {
     </Router>
   );
 };
-
-export default AppLayout;
+export default AppLayout; 
