@@ -2,44 +2,48 @@ import { cn } from "../../../lib/utils";
 
 export function FeaturesSectionDemo() {
   const features = [
-    {
-      title: "Built for developers",
-      description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
-    },
-    {
-      title: "Ease of use",
-      description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
-    },
-    {
-      title: "Pricing like no other",
-      description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
-    },
-    {
-      title: "100% Uptime guarantee",
-      description: "We just cannot be taken down by anyone.",
-    },
-    {
-      title: "Multi-tenant Architecture",
-      description: "You can simply share passwords instead of buying new seats",
-    },
-    {
-      title: "24/7 Customer Support",
-      description:
-        "We are available a 100% of the time. Atleast our AI Agents are.",
-    },
-    {
-      title: "Money back guarantee",
-      description:
-        "If you donot like EveryAI, we will convince you to like us.",
-    },
-    {
-      title: "And everything else",
-      description: "I just ran out of copy ideas. Accept my sincere apologies",
-    },
-  ];
+  {
+    title: "Driven by Students",
+    description:
+      "A passionate team from NIT Trichy, led entirely by students with a vision for innovation in transportation.",
+  },
+  {
+    title: "Hyperloop Innovation",
+    description:
+      "We aim to revolutionize high-speed transport through cutting-edge hyperloop technology and design.",
+  },
+  {
+    title: "Multidisciplinary Collaboration",
+    description:
+      "We bring together Mechanical, Electrical, Electronics, and Computer Science students for integrated R&D.",
+  },
+  {
+    title: "Sustainable and Efficient",
+    description:
+      "Our goal is to build hyperloop systems that are cost-effective, energy-efficient, and future-ready.",
+  },
+  {
+    title: "Proven Track Record",
+    description:
+      "We’ve earned recognition at major competitions like the Global Hyperloop Competition at IIT Madras.",
+  },
+  {
+    title: "Relentless Prototyping",
+    description:
+      "Our design process is powered by rigorous research, hands-on prototyping, and expert feedback.",
+  },
+  {
+    title: "Vision for Scalable Impact",
+    description:
+      "We're committed to building a robust framework that can integrate with modern transport networks.",
+  },
+  {
+    title: "Community & Collaboration",
+    description:
+      "At our core, we believe in solving real-world problems together, through teamwork and shared purpose.",
+  },
+];
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
       {features.map((feature, index) => (
