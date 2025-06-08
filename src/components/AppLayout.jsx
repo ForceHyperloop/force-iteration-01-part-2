@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Contact from "./Contact";
 import NavBar from "./NavBar";
+import { StarsBackground } from "./ui/StarsBackground";
+import { ShootingStars } from "./ui/ShootingStars";
+import Hero from "./Hero";
+
+// Loading Screen Component
+const LoadingScreen = () => (
+  <div className="overflow-x-hidden">
+    <div className="fixed inset-0 z-0">
+      <StarsBackground />
+      <ShootingStars />
+    </div>
+    <div className="flex items-center justify-center h-screen bg-neutral-900 text-white">
+      <div className="text-2xl animate-pulse">
+        <Hero />
+      </div>
+    </div>
+  </div>
+);
 
 const AppLayout = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <Router>
       <div>
