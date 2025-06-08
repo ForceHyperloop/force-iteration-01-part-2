@@ -30,7 +30,7 @@ const RecentWorks = () => {
   return (
     <div className="flex flex-col my-[3vh] items-center justify-center">
       <h1 className="text-white md:text-xl sm:text-md text-3xl font-bold pb-5">
-        RECENT WORKS
+        ACHIEVEMENTS
       </h1>
 
       <AnimatePresence>

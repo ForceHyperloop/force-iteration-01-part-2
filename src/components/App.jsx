@@ -9,7 +9,7 @@ import Footer from "./Footer";
 function App() {
   return (
     <div className="overflow-x-hidden">
-      <div className="fixed inset-0 ">
+      <div className="fixed inset-0 z-0">
         <StarsBackground />
         <ShootingStars />
       </div>

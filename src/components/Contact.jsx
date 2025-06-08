@@ -1,6 +1,9 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./Contact.module.css";
 import { motion } from "framer-motion";
+import { StarsBackground } from "../components/ui/StarsBackground";
+import { ShootingStars } from "../components/ui/ShootingStars";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +47,6 @@ const Contact = () => {
 
       setStatus({ submitted: true, submitting: false, error: null });
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setStatus({ submitted: false, submitting: false, error: null });
         setFormData({ name: "", email: "", message: "" });
@@ -59,25 +61,26 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-12 mt-11 sm:mt-7 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <span
-            className={`${styles.libreBarcode} text-4xl text-white block mb-2`}
+    <div className="relative min-h-screen overflow-hidden bg-neutral-900 ">
+      {/* Background */}
+      <div className="fixed inset-0 z-0">
+        <StarsBackground />
+        <ShootingStars />
+      </div>
+
+      {/* Contact content */}
+      <div className="relative z-10 flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 min-h-screen">
+        <div className="max-w-4xl w-full text-center mb-12">
+          <h2
+            className={`${styles.libreBarcode} text-4xl text-white sm:text-5xl mb-4`}
           >
             Join the revolution IN
-          </span>
-          <span
-            className={`${styles.libreBarcode} text-4xl text-white block mb-2`}
-          >
+            <br />
             high-speed transportation
-          </span>
-          <span
-            className={`${styles.libreBarcode} text-4xl text-white block mb-6`}
-          >
+            <br />
             with Force Hyperloop!
-          </span>
-          <p className="text-gray-300 text-lg mb-2">
+          </h2>
+          <p className="text-gray-200 text-lg mb-2">
             We are pushing the boundaries of innovation to redefine the future
             of mobility.
           </p>
@@ -88,23 +91,31 @@ const Contact = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-gray-800 rounded-lg shadow-xl p-8 mt-8"
+          className="relative w-full max-w-3xl bg-white/5 backdrop-blur-md border border-white/20 rounded-xl p-8 shadow-2xl overflow-hidden"
         >
+          {/* Optional star background inside form */}
+          <div className="absolute inset-0 pointer-events-none z-0 opacity-10">
+            <StarsBackground starDensity={0.00008} allStarsTwinkle={false} />
+          </div>
+
+          {/* Form status messages */}
           {status.error && (
-            <div className="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+            <div className="mb-4 p-4 bg-red-300/20 border border-red-400 text-red-100 rounded shadow-lg z-10 relative">
               {status.error}
             </div>
           )}
+          {status.submitted && (
+            <div className="mb-4 p-4 bg-green-300/20 border border-green-400 text-green-100 rounded shadow-lg z-10 relative">
+              Message sent successfully!
+            </div>
+          )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 z-10 relative">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-300"
-              >
+              <label htmlFor="name" className="block text-sm font-medium text-gray-300">
                 Name
               </label>
               <input
@@ -115,16 +126,13 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 disabled={status.submitting}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2"
+                className="glow-input mt-1 block w-full rounded-md border border-gray-500 bg-white/10 text-white placeholder-white/60 shadow-sm focus:ring-2 focus:ring-blue-500 sm:text-sm px-3 py-2"
                 placeholder="Your name"
               />
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-300"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-gray-300">
                 Email
               </label>
               <input
@@ -135,16 +143,13 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 disabled={status.submitting}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2"
+                className="glow-input mt-1 block w-full rounded-md border border-gray-500 bg-white/10 text-white placeholder-white/60 shadow-sm focus:ring-2 focus:ring-blue-500 sm:text-sm px-3 py-2"
                 placeholder="your.email@example.com"
               />
             </div>
 
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-300"
-              >
+              <label htmlFor="message" className="block text-sm font-medium text-gray-300">
                 Message
               </label>
               <textarea
@@ -155,7 +160,7 @@ const Contact = () => {
                 required
                 disabled={status.submitting}
                 rows={4}
-                className="mt-1 block w-full rounded-md border-gray-700 bg-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm px-3 py-2"
+                className="glow-input mt-1 block w-full rounded-md border border-gray-500 bg-white/10 text-white placeholder-white/60 shadow-sm focus:ring-2 focus:ring-blue-500 sm:text-sm px-3 py-2"
                 placeholder="Your message..."
               />
             </div>
@@ -166,11 +171,11 @@ const Contact = () => {
                 whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={status.submitting}
-                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
+                className={`glow-button w-full flex justify-center py-3 px-4 border bg-white/5 border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
                   status.submitting
-                    ? "bg-indigo-400 cursor-not-allowed"
-                    : "bg-indigo-600 hover:bg-indigo-700"
-                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                    ? "bg-blue-400 cursor-not-allowed"
+                    : "hover:bg-opacity-90"
+                } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
               >
                 {status.submitting
                   ? "Sending..."
